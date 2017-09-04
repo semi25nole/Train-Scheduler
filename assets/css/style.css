@@ -1,0 +1,35 @@
+#head {
+  color: white;
+  font-family: 'Poiret One', cursive;
+  font-size: 50px;
+}
+
+#info {
+  color: white;
+  font-size: 30px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.jumbotron {
+  background-color: darkslategray;
+}
+
+.table-striped, .table {
+  background: darkslategray;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+
+body {
+  background-image: url(../images/background.jpg);
+}
+
+td {
+  color: black;
+  background-color: white;
+}
+
+input {
+  width: 98%;
+}

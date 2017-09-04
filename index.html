@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Train</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Poiret+One" rel="stylesheet">
+</head>
+
+<body>
+  <div class="text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="jumbotron">
+            <h1 id="head">Station Times</h1>
+            <p id="info">Departures Subject to Change</p>
+          </div>
+          <!--This closes the jumbotron div-->
+          <br>
+          <table class="table">
+            <thead>
+              <th>Current Train Schedule</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Train Name</td>
+                <td>Destination</td>
+                <td>Frequency(min)</td>
+                <td>Next Arrival</td>
+                <td>Minutes Away</td>
+              </tr>
+            </tbody>
+          </table>
+          <!--This closes the table div-->
+        </div>
+        <!--This closes the col-md-12 div-->
+      </div>
+      <!--This closes the row div-->
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Add A Train</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><label for="text">Train Name</label><input type="text" placeholder="Train Name"></td>
+              </tr>
+              <tr>
+                <td><label for="text">Destination</label><input type="text" placeholder="Destination"></td>
+              </tr>
+              <tr>
+                <td><label for="text">First Train Time(HH:mm Military Time)</label><input type="text" placeholder="Time"></td>
+              </tr>
+              <tr>
+                <td><label for="text">Frequency(min)</label><input type="text" placeholder="Frequency"></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="btn btn-primary">Submit</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--This closes the 2nd col-md-12-->
+      </div>
+      <!--This closes the 2nd row-->
+    </div>
+    <!--This closes the container div-->
+  </div>
+  <!--This closes the text-center div-->
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="./assets/js/train.js"></script>
+
+</body>
+
+</html>
