@@ -25,7 +25,7 @@ body {
   background-image: url(../images/background.jpg);
 }
 
-td {
+td, #new {
   color: black;
   background-color: white;
 }
