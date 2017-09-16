@@ -1,35 +1,57 @@
-#head {
+#jumbo {
   color: white;
   font-family: 'Poiret One', cursive;
   font-size: 50px;
 }
 
-#info {
+th {
   color: white;
-  font-size: 30px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: tahoma, serif;
 }
 
 .jumbotron {
   background-color: darkslategray;
 }
 
-.table-striped, .table {
+#currentEmp {
   background: darkslategray;
   color: white;
-  border-radius: 8px;
-  border: none;
+  margin-top: 0px;
 }
 
 body {
   background-image: url(../images/background.jpg);
 }
 
-td, #new {
-  color: black;
-  background-color: white;
+form {
+  color: white;
+  background-color: darkslategrey;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
-input {
-  width: 98%;
+#name, #dest, #freq, #time {
+  width: 50%;
+}
+
+h3 {
+  background-color: darkslategrey;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 0px;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+h2 {
+  background-color: darkslategrey;
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 0px;
+  padding-top: 20px;
+  padding-left: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }

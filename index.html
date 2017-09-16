@@ -9,79 +9,55 @@
 </head>
 
 <body>
-  <div class="text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="jumbotron">
-            <h1 id="head">Station Times</h1>
-            <p id="info">Departures Subject to Change</p>
-          </div>
-          <!--This closes the jumbotron div-->
-          <br>
-          <table class="table">
-            <thead>
-              <th>Current Train Schedule</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Train Name</td>
-                <td>Destination</td>
-                <td>Frequency(min)</td>
-                <td>Next Arrival</td>
-                <td>Minutes Away</td>
-              </tr>
-            </tbody>
-          </table>
-          <div id="new">
-            
-          </div>
-          <!--This closes the table div-->
-        </div>
-        <!--This closes the col-md-12 div-->
-      </div>
-      <!--This closes the row div-->
-      <br>
-      <br>
-      <br>
-      <br>
-      <div class="row">
-        <div class="col-md-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Add A Train</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><label for="text">Train Name</label><input id="tName" type="text" placeholder="Train Name"></td>
-              </tr>
-              <tr>
-                <td><label for="text">Destination</label><input id="dest" type="text" placeholder="Destination"></td>
-              </tr>
-              <tr>
-                <td><label for="text">First Train Time(HH:mm Military Time)</label><input type="text" placeholder="Time"></td>
-              </tr>
-              <tr>
-                <td><label for="text">Frequency(min)</label><input id="freq" type="text" placeholder="Frequency"></td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="btn btn-primary">Submit</div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!--This closes the 2nd col-md-12-->
-      </div>
-      <!--This closes the 2nd row-->
+  <div class="container">
+    <div class="jumbotron text-center" id="jumbo">
+      <h1>Train Schedule</h1>
+      <h4>Departures Subject to Change</h4>
     </div>
-    <!--This closes the container div-->
+    <!--This closes the jumbotron-->
+    <div class="row">
+      <div class="col-xs-12"></div>
+      <!--This closes the col-->
+    </div>
+    <!--This closes the row-->
+    <div class="row">
+      <div class="col-12-md">
+        <table class="table" id="currentEmp">
+          <h3>Current Train Schedule</h3>
+          <tr>
+            <th>Train Name</th>
+            <th>Destination</th>
+            <th>Frequency(min)</th>
+            <th>Next Arrival</th>
+            <th>Minutes Away</th>
+          </tr>
+          <tbody id="tbod"></tbody>
+        </table>
+        <br>
+        <h2>Add Train</h2>
+        <form>
+          <div class="form-group">
+            <label for="employee name">Train Name</label>
+            <input type="employee name" class="form-control" id="name" placeholder="Enter name"></div>
+          <div class="form-group">
+            <label for="employee name">Destination</label>
+            <input type="role" class="form-control" id="dest" placeholder="Enter Destination"></div>
+          <div class="form-group">
+            <label for="employee name">First Train Time(HH:mm - military time)</label>
+            <input type="start date" class="form-control" id="time" placeholder="Enter Time"></div>
+          <div class="form-group">
+            <label for="employee name">Frequency(min)</label>
+            <input type="monthly rate" class="form-control" id="freq" placeholder="Enter Minutes">
+          </div>
+          <button type="button" id="butt" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
   </div>
-  <!--This closes the text-center div-->
+  </div>
+  <!--This closes the container-->
   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="./assets/js/train.js"></script>
 

@@ -1,53 +1,55 @@
 var config = {
-   apiKey: "AIzaSyBtmXpIiX7akXlaIdiV8PwifeH7vlqV2zQ",
-   authDomain: "train-departures.firebaseapp.com",
-   databaseURL: "https://train-departures.firebaseio.com",
-   projectId: "train-departures",
-   storageBucket: "train-departures.appspot.com",
-   messagingSenderId: "75786081357"
- };
- firebase.initializeApp(config);
+  apiKey: "AIzaSyBtmXpIiX7akXlaIdiV8PwifeH7vlqV2zQ",
+  authDomain: "train-departures.firebaseapp.com",
+  databaseURL: "https://train-departures.firebaseio.com",
+  projectId: "train-departures",
+  storageBucket: "train-departures.appspot.com",
+  messagingSenderId: "75786081357"
+};
+firebase.initializeApp(config);
 
- var database = firebase.database();
+var name = "";
+var dest = "";
+var time = "";
+var freq = "";
+var next = "";
+var arr = "";
 
- var tName = "";
- var dest = "";
- var freq = "";
- var nxtArr = "";
- var minA = "";
- var table = $('')
-
- $('.btn-primary').on("click", function() {
-   event.preventDefault();
-
-   tName = $('#tName').val().trim();
-   dest = $('#dest').val().trim();
-   freq = $('#freq').val().trim();
+var database = firebase.database();
 
 
-   database.ref().set({
-        tName: tName,
-        dest: dest,
-        freq: freq,
-        nxtArr: nxtArr
-      });
+$('.btn-primary').on('click', function() {
 
-      database.ref().on("value", function(snapshot) {
+  event.preventDefault();
 
-            // Print the initial data to the console.
-            console.log(snapshot.val());
+  name = $('#name').val();
+  dest = $('#dest').val();
+  freq = $('#freq').val();
+  time = $('#time').val();
 
-            // Log the value of the various properties
-            console.log(snapshot.val().tName);
-            console.log(snapshot.val().dest);
-            console.log(snapshot.val().freq);
-            console.log(snapshot.val().nxtArr);
+  var newTime = moment(time, 'hh:mm').format('LT');
+  var change = moment(newTime, "hh:mm").subtract(1, "years");
+  var diff = moment().diff(moment(change), 'minutes');
+  var remaining = diff % freq;
+  arr = freq - remaining;
 
-            // Change the HTML
-            $("#new").html(snapshot.val().tName + " | " + snapshot.val().dest + " | " + snapshot.val().freq + " | " + snapshot.val().nxtArr);
+  database.ref().push({
+    name: name,
+    dest: dest,
+    time: newTime,
+    freq: freq,
+    arr: arr
+  })
 
-            // If any errors are experienced, log them to console.
-          }, function(errorObject) {
-            console.log("The read failed: " + errorObject.code);
-          });
-    });
+  $('#name').val("");
+  $('#dest').val("");
+  $('#freq').val("");
+  $('#time').val("");
+
+});
+database.ref().orderByChild('dataAddded').on('child_added', function(snapshot) {
+  var sv = snapshot.val();
+  var add = '<tr><td>' + sv.name + '</td><td>' + sv.dest + '</td><td>' + sv.freq + '</td><td>' + sv.time + '</td><td>' + sv.arr + '</td><td>';
+  $('#tbod').append(add);
+
+});
