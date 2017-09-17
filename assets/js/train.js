@@ -27,7 +27,7 @@ $('.btn-primary').on('click', function() {
   freq = $('#freq').val();
   time = $('#time').val();
 
-  var newTime = moment(time, 'hh:mm').format('LLL');
+  var newTime = moment().format('LLL');
 
   var change = moment(newTime).subtract(1, "years");
 
