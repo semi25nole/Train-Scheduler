@@ -29,13 +29,16 @@ $('.btn-primary').on('click', function() {
 
   var newTime = moment(time, 'hh:mm').format('LLL');
 
-  var change = moment(newTime).subtract(1, "years");
+  var change = moment(newTime, 'hh:mm').subtract(1, "years");
 
   var diff = moment().diff(moment(change), 'minutes');
 
-  var remaining = freq % diff;
+  var next = diff % freq;
 
-  arr = remaining;
+  var nextArr = freq - next;
+
+  arr = nextArr;
+
 
   database.ref().push({
     name: name,
