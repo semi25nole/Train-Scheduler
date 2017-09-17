@@ -27,11 +27,15 @@ $('.btn-primary').on('click', function() {
   freq = $('#freq').val();
   time = $('#time').val();
 
-  var newTime = moment(time, 'hh:mm').format('LT');
-  var change = moment(newTime, "hh:mm").subtract(1, "years");
+  var newTime = moment().format('LLL');
+
+  var change = moment(newTime).subtract(1, "years");
+
   var diff = moment().diff(moment(change), 'minutes');
+
   var remaining = diff % freq;
-  arr = freq - remaining;
+
+  arr = remaining;
 
   database.ref().push({
     name: name,
