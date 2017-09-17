@@ -35,9 +35,7 @@ $('.btn-primary').on('click', function() {
 
   var remaining = freq & diff;
 
-  var next = freq - remaining;
-
-  arr = next;
+  arr = remaining;
 
   database.ref().push({
     name: name,
