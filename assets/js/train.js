@@ -33,7 +33,7 @@ $('.btn-primary').on('click', function() {
 
   var diff = moment().diff(moment(change), 'minutes');
 
-  var remaining = diff % freq;
+  var remaining = freq & diff;
 
   var next = freq - remaining;
 
